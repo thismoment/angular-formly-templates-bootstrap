@@ -1,6 +1,8 @@
 export default ngModule => {
   ngModule.config(addWrappers);
 
+  require('dynamic-bind-html');
+
   function addWrappers(formlyConfigProvider) {
     formlyConfigProvider.setWrapper([
       {

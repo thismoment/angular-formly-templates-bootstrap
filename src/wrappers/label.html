@@ -1,7 +1,10 @@
 <div>
-  <label for="{{id}}" class="control-label {{to.labelSrOnly ? 'sr-only' : ''}}" ng-if="to.label">
-    {{to.label}}
-    {{to.required ? '*' : ''}}
+  <label 
+    for="{{id}}" 
+    class="control-label {{to.labelSrOnly ? 'sr-only' : ''}}" 
+    ng-if="to.label">
+      <span dynamic-bind-html="{{to.label}}"></span>
+      <span class="required-asterisk">{{to.required ? '*' : ''}}</span>
   </label>
   <formly-transclude></formly-transclude>
 </div>
