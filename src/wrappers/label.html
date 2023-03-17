@@ -4,8 +4,8 @@
     class="control-label {{to.labelSrOnly ? 'sr-only' : ''}}"
     ng-if="to.label"
   >
-    <span ng-bind-html="to.label"></span>
-    <span class="required-asterisk">{{to.required ? '*' : ''}}</span>
+    <span class="label-text" ng-bind-html="to.label"></span>
+    <span class="label-asterisk">{{to.required ? '*' : ''}}</span>
   </label>
   <formly-transclude></formly-transclude>
 </div>
