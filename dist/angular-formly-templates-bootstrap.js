@@ -220,7 +220,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 11 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"checkbox\">\n\t<label>\n\t\t<input type=\"checkbox\"\n           class=\"formly-field-checkbox\"\n\t\t       ng-model=\"model[options.key]\">\n\t\t{{to.label}}\n\t\t{{to.required ? '*' : ''}}\n\t</label>\n</div>\n"
+	module.exports = "<div class=\"checkbox\">\n\t<label>\n\t\t<input type=\"checkbox\"\n           class=\"formly-field-checkbox\"\n\t       ng-model=\"model[options.key]\">\n\t\t    <span class=\"label-text\" ng-bind-html=\"to.label\"></span>\n\t\t    <span class=\"label-asterisk\">{{to.required ? '*' : ''}}</span>\n\t</label>\n</div>\n"
 
 /***/ },
 /* 12 */
