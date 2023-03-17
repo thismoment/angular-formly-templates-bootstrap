@@ -2,8 +2,8 @@
 	<label>
 		<input type="checkbox"
            class="formly-field-checkbox"
-		       ng-model="model[options.key]">
-		{{to.label}}
-		{{to.required ? '*' : ''}}
+	       ng-model="model[options.key]">
+		    <span class="label-text" ng-bind-html="to.label"></span>
+		    <span class="label-asterisk">{{to.required ? '*' : ''}}</span>
 	</label>
 </div>
