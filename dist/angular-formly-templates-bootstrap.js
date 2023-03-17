@@ -1,4 +1,4 @@
-//! angular-formly-templates-bootstrap version 6.3.4 built with ♥ by Astrism <astrisms@gmail.com>, Kent C. Dodds <kent@doddsfamily.us> (ó ì_í)=óò=(ì_í ò)
+//! angular-formly-templates-bootstrap version 6.3.5 built with ♥ by Astrism <astrisms@gmail.com>, Kent C. Dodds <kent@doddsfamily.us> (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -77,7 +77,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prefix: 'angular-formly-bootstrap'
 	  }
 	}));
-	ngModule.constant('formlyBootstrapVersion', ("6.3.4"));
+	ngModule.constant('formlyBootstrapVersion', ("6.3.5"));
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
@@ -155,7 +155,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n  <label\n    for=\"{{id}}\"\n    class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\"\n    ng-if=\"to.label\"\n  >\n    <span ng-bind-html=\"to.label\"></span>\n    <span class=\"required-asterisk\">{{to.required ? '*' : ''}}</span>\n  </label>\n  <formly-transclude></formly-transclude>\n</div>\n"
+	module.exports = "<div>\n  <label\n    for=\"{{id}}\"\n    class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\"\n    ng-if=\"to.label\"\n  >\n    <span class=\"label-text\" ng-bind-html=\"to.label\"></span>\n    <span class=\"label-asterisk\">{{to.required ? '*' : ''}}</span>\n    <span class=\"max-length\" style=\"display: none\" ng-if=\"to.maxlength\">\n      ({{ to.maxlength }} character limit)</span\n    >\n  </label>\n  <formly-transclude></formly-transclude>\n</div>\n"
 
 /***/ },
 /* 8 */

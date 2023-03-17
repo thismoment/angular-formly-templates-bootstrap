@@ -6,6 +6,9 @@
   >
     <span class="label-text" ng-bind-html="to.label"></span>
     <span class="label-asterisk">{{to.required ? '*' : ''}}</span>
+    <span class="max-length" style="display: none" ng-if="to.maxlength">
+      ({{ to.maxlength }} character limit)</span
+    >
   </label>
   <formly-transclude></formly-transclude>
 </div>
