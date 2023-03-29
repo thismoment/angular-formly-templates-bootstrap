@@ -158,7 +158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n  <label\n    for=\"{{id}}\"\n    class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\"\n    ng-if=\"to.label\"\n  >\n    <span class=\"label-text\" ng-bind-html=\"to.label | trustHtml\"></span>\n    <span class=\"label-asterisk\">{{to.required ? '*' : ''}}</span>\n    <span class=\"label-maxlength\" style=\"display: none\" ng-if=\"to.maxlength\">\n      ({{ to.maxlength }} character limit)</span\n    >\n  </label>\n  <formly-transclude></formly-transclude>\n</div>\n"
+	module.exports = "<div>\n  <label\n    for=\"{{id}}\"\n    class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\"\n    ng-if=\"to.label\"\n  >\n    <span class=\"label-text\" ng-bind-html=\"to.label | trustHtml\"></span>\n    <span class=\"label-asterisk\">{{to.required ? '*' : ''}}</span>\n    <span class=\"label-maxlength\" style=\"display: none\" ng-if=\"to.maxlength\">\n      ({{ to.maxlength }} character limit)</span\n    >\n  </label>\n  <span\n    class=\"label-help-text\"\n    ng-if=\"to.helpText\"\n    ng-bind-html=\"to.helpText | trustHtml\"\n  ></span>\n  <formly-transclude></formly-transclude>\n</div>\n"
 
 /***/ },
 /* 8 */

@@ -10,5 +10,10 @@
       ({{ to.maxlength }} character limit)</span
     >
   </label>
+  <span
+    class="label-help-text"
+    ng-if="to.helpText"
+    ng-bind-html="to.helpText | trustHtml"
+  ></span>
   <formly-transclude></formly-transclude>
 </div>
