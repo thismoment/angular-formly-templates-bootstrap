@@ -1,5 +1,8 @@
 export default (ngModule) => {
   ngModule.config(addWrappers);
+  ngModule.filter("trustHtml", function ($sce) {
+    return $sce.trustAsHtml;
+  });
 
   function addWrappers(formlyConfigProvider) {
     formlyConfigProvider.setWrapper([
