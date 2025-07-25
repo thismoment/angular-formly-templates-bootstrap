@@ -34,6 +34,8 @@
 
 <script src="node_modules/api-check/dist/api-check.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/angular-formly/dist/formly.js"></script>
 <script src="dist/angular-formly-templates-bootstrap.js"></script>
@@ -57,10 +59,21 @@
         }
       },
       {
+        type: 'input',
+        key: 'username',
+        templateOptions: {
+          label: 'Username',
+          placeholder: 'Enter your username',
+          tooltip: 'Your username must be unique and between 3-20 characters long',
+          required: true
+        }
+      },
+      {
         type: 'select',
         key: 'avenger',
         templateOptions: {
           label: 'Favorite Avenger',
+          tooltip: 'Choose your favorite superhero from the Marvel universe',
           options: [
             {name: 'Iron Man', value: 'iron_man', gender: 'Male'},
             {name: 'Captain America', value: 'captain_america', gender: 'Male'},

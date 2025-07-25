@@ -5,6 +5,16 @@
     ng-if="to.label"
   >
     <span class="label-text" ng-bind-html="to.label | trustHtml"></span>
+    <span 
+      class="glyphicon glyphicon-info-sign" 
+      style="margin-left: 5px; color: #999; cursor: help;" 
+      ng-if="to.tooltip"
+      data-toggle="tooltip" 
+      data-placement="top" 
+      ng-attr-title="{{to.tooltip}}"
+      data-container="body"
+      bootstrap-tooltip
+    ></span>
     <span class="label-asterisk">{{to.required ? '*' : ''}}</span>
     <span class="label-maxlength" style="display: none" ng-if="to.maxlength">
       ({{ to.maxlength }} character limit)</span

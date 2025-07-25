@@ -133,6 +133,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	  ngModule.filter("trustHtml", ["$sce", function ($sce) {
 	    return $sce.trustAsHtml;
 	  }]);
+	  ngModule.directive("bootstrapTooltip", ["$timeout", function ($timeout) {
+	    return {
+	      restrict: "A",
+	      link: function link(scope, element, attrs) {
+	        // Wait for Angular to process attributes, then initialize tooltip
+	        $timeout(function () {
+	          element.tooltip();
+	        });
+
+	        // Watch for changes to the title attribute
+	        attrs.$observe('title', function (value) {
+	          if (value) {
+	            element.attr('data-original-title', value);
+	            if (element.data('bs.tooltip')) {
+	              element.tooltip('fixTitle');
+	            }
+	          }
+	        });
+
+	        // Clean up on scope destroy
+	        scope.$on("$destroy", function () {
+	          element.tooltip("destroy");
+	        });
+	      }
+	    };
+	  }]);
 
 	  function addWrappers(formlyConfigProvider) {
 	    formlyConfigProvider.setWrapper([{
@@ -143,7 +169,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          templateOptions: {
 	            label: check.string.optional,
 	            required: check.bool.optional,
-	            labelSrOnly: check.bool.optional
+	            labelSrOnly: check.bool.optional,
+	            tooltip: check.string.optional
 	          }
 	        };
 	      }
@@ -158,7 +185,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n  <label\n    for=\"{{id}}\"\n    class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\"\n    ng-if=\"to.label\"\n  >\n    <span class=\"label-text\" ng-bind-html=\"to.label | trustHtml\"></span>\n    <span class=\"label-asterisk\">{{to.required ? '*' : ''}}</span>\n    <span class=\"label-maxlength\" style=\"display: none\" ng-if=\"to.maxlength\">\n      ({{ to.maxlength }} character limit)</span\n    >\n  </label>\n  <span\n    class=\"label-help-text\"\n    ng-if=\"to.labelHelpText\"\n    ng-bind-html=\"to.labelHelpText | trustHtml\"\n  ></span>\n  <formly-transclude></formly-transclude>\n</div>\n"
+	module.exports = "<div>\n  <label\n    for=\"{{id}}\"\n    class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\"\n    ng-if=\"to.label\"\n  >\n    <span class=\"label-text\" ng-bind-html=\"to.label | trustHtml\"></span>\n    <span \n      class=\"glyphicon glyphicon-info-sign\" \n      style=\"margin-left: 5px; color: #999; cursor: help;\" \n      ng-if=\"to.tooltip\"\n      data-toggle=\"tooltip\" \n      data-placement=\"top\" \n      ng-attr-title=\"{{to.tooltip}}\"\n      data-container=\"body\"\n      bootstrap-tooltip\n    ></span>\n    <span class=\"label-asterisk\">{{to.required ? '*' : ''}}</span>\n    <span class=\"label-maxlength\" style=\"display: none\" ng-if=\"to.maxlength\">\n      ({{ to.maxlength }} character limit)</span\n    >\n  </label>\n  <span\n    class=\"label-help-text\"\n    ng-if=\"to.labelHelpText\"\n    ng-bind-html=\"to.labelHelpText | trustHtml\"\n  ></span>\n  <formly-transclude></formly-transclude>\n</div>\n"
 
 /***/ },
 /* 8 */

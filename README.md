@@ -1,5 +1,11 @@
 # angular-formly: Bootstrap Template
 
+```
+npm install
+npm install angular@^1.2.0 angular-formly@^6.20.0 api-check@^7.5.0 bootstrap@^3.2.0
+npm run build
+```
+
 Status:
 [![npm version](https://img.shields.io/npm/v/angular-formly-templates-bootstrap.svg?style=flat-square)](https://www.npmjs.org/package/angular-formly-templates-bootstrap)
 [![npm downloads](https://img.shields.io/npm/dm/angular-formly-templates-bootstrap.svg?style=flat-square)](http://npm-stat.com/charts.html?package=angular-formly-templates-bootstrap&from=2015-09-01)
@@ -89,6 +95,13 @@ NOTE: All of these properties will be under the `templateOptions` property as of
 ---
 ##### description (string)
 >`description` is used to add descriptive text to all inputs.
+
+###### Default
+>`undefined`
+
+---
+##### tooltip (string)
+>`tooltip` is used to add a tooltip icon next to the label that displays helpful text when hovered.
 
 ###### Default
 >`undefined`
